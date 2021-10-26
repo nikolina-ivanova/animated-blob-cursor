@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: #212121;
+    /* how colors bled with the parent */
+    mix-blend-mode: difference; 
+}
+.nav_link {
+    color: #fff;
+    list-style: none;
+    cursor: pointer;
+    padding: 0.1em;
+    font-size: 120px;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.25s ease;
+    transform: scale(1);
+}
+.nav_link:hover{
+    transform: scale(1.5);
+}
+
+#cursorBlob {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: linear-gradient(
+    120deg,
+    #FF1744,
+    #E040FB,
+    #2979FF,
+    #00E5FF,
+    #76FF03
+  );
+    transition: 0.25s ease;
+    background-size: 1000%;
+    animation: blobRadius 3s ease infinite, blobBackground 15s ease infinite;
+}
+
+@keyframes blobRadius {
+    0%, 100%  { border-radius: 43% 77% 80% 40% / 40% 40% 80% 80%; }
+    20% { border-radius: 47% 73% 61% 59% / 47% 75% 45% 73%; }
+	40% { border-radius: 46% 74% 74% 46% / 74% 58% 62% 46%; }
+	60% { border-radius: 47% 73% 61% 59% / 40% 40% 80% 80%; }
+	80% { border-radius: 50% 70% 52% 68% / 51% 61% 59% 69%; }
+}
+@keyframes blobBackground {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@media only screen and (max-width: 1200px) {
+    .nav_link{
+        font-size: 100px;
+    }
+}
